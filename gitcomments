@@ -1,0 +1,130 @@
+//
+1.git init -->initialise  the git with working copy
+2.git remote add origin master -->connection between WC and remote
+3.git add . --> to add all files and file is available at stage area
+4.git add <file name> --> to add respective file and file available at stage area.
+5.git commit -m "reason" --> file is available at local repo
+6.git push origin master --> to push code to remote master branch
+
+//
+1.git branch --> to check nos of branch
+2.git branch <branch name> --> to create branch
+3.git checkout <branch name> --> to switch to that branch
+4.git checkout -b <branch name> --> create and switch to branch
+
+//
+1.git branch cartpage -->switch to cartpage
+write some file to cartpage
+2.git add <file name> --> add file to cartpage at remote side
+3.git commit -m "reason"
+4.raise PR and see commits for PR is approved or not
+PR is not approved change the code based on commits
+5.PR approved and merge the code master <-- cartpage
+6.git push origin master
+
+
+//
+1.git checkout master
+make sure master should reflect in eclipse
+2.git pull origin master
+3.git checkout cartpage
+4.git merge master
+
+//
+1.vinutha is working on demo() in master branch local
+2.sai leela is also working on demo() in master branch local
+3.sai leela as commit change to repo master brnach
+4.vinutha have to take latest pull git pull origin master
+5.pull will be aborted
+6.so vinutha have to move the code to stash: git add <file name> and git stash
+7.then vinutha have to take lastest pull git pull origin master
+8.remote changes are reflected in WC of vinutha local
+9.vinutha have to take black stash code to WC: git stash pop
+10.merge conflict will happen
+<<<<<<<<<<<<<<<<<<<< upstream
+==========================
+>>>>>>>>>>>>>>>>>>>>>downstream
+11.communicate each other 
+12.if vinutha code is ok she have to pull code to remote
+13.sai leela have to take lastest pull
+
+
+//
+1.git add < file name>
+2.git commit -m "reason"
+3.git reset --soft HEAD^^ -->delete code from local repo
+4.git reset --mixed HEAD^^ -->delete code from stage area
+5.git reset --hard HEAD^^-->delete code from local WC
+6.git push origin master -->WC behind 
+7.git push -f origin master --> force push to remote master
+
+//
+1.git log
+2.git log --oneline
+3.git log --author=""
+4.git reflog -->lastest commit history
+5.git blame <file name> -->provides code line by line history
+6.git shortlog -->commit history of every user
+7.git show HEAD -->last commit ID
+8.git show HEAD~2 -->last two commit ID
+9.git tag v1.0
+10.git push origin v1.0
+11.git log --before ="date"
+12.git log --grep ="cart" -->cart related commit will get
+13.git log --reverse
+14.git log --stat
+
+
+
+
+//
+1.git branch -r -->check remote branch  how many
+2.git push -d origin <branch name> -->delete remote side branch
+3.git branch --delete <branch name> -->delete local side branch 
+4.git branch -vv -->remote and local branch how many
+5.   git checkout cartpage : git cherry-pick <commit ID> <commit ID> --> used to add only given commits to cartpage
+6.git fetch origin master --> code is available only at local repo
+7.git branch cartpage : git rebase master   --> all commits are merge to origin master but separately commits are aviable.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
