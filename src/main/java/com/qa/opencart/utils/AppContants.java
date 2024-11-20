@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class AppContants {
-public static final  String LOGIN_PAGE_TITLE ="Account Login11";
+public static final  String LOGIN_PAGE_TITLE ="Account Login";
 public static final int SHORT_TIME=5;
 public static final int MEDIUM_TIME=10;
 public static final int LONG_TIME=20;

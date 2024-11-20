@@ -51,38 +51,38 @@ public class BaseTest {
 	{
 		driver.quit();
 	}
-	@AfterSuite
-    public void openExtentReport() {
-		//extend html report
-        String reportPath = "reports/TestExecutionReport.html"; 
-            try {
-            	 File htmlFile = new File(reportPath);
-            	 if (htmlFile.exists()) {
-                Desktop.getDesktop().browse(htmlFile.toURI());
-            } 
-            	 else {
-                     System.out.println("Report file not found:"+htmlFile.getAbsolutePath());
-                 }
-            }
-            	 catch (IOException e) {
-                e.printStackTrace();
-            }
-            //allure serve
-        
-            try {
-                // Use ProcessBuilder to run the Allure command with the correct executable path
-                String allureExecutable = "C:/Users/vinut/scoop/apps/allure/2.32.0/bin/allure.bat";
-                ProcessBuilder builder = new ProcessBuilder(allureExecutable, "serve", "allure-results");
-                builder.inheritIO(); // This will inherit the IO streams of the current process
-                Process process = builder.start(); // Start the process to serve the report
-                process.waitFor(); // Wait for the process to complete
-
-                // Allure serve command automatically opens the report in a browser
-                System.out.println("Allure reports served successfully.");
-            } catch (IOException | InterruptedException e) {
-                e.printStackTrace();
-                System.out.println("Failed to serve Allure report.");
-            }
-}
+//	@AfterSuite
+//    public void openExtentReport() {
+//		//extend html report
+//        String reportPath = "reports/TestExecutionReport.html"; 
+//            try {
+//            	 File htmlFile = new File(reportPath);
+//            	 if (htmlFile.exists()) {
+//                Desktop.getDesktop().browse(htmlFile.toURI());
+//            } 
+//            	 else {
+//                     System.out.println("Report file not found:"+htmlFile.getAbsolutePath());
+//                 }
+//            }
+//            	 catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            //allure serve
+//        
+//            try {
+//                // Use ProcessBuilder to run the Allure command with the correct executable path
+//                String allureExecutable = "C:/Users/vinut/scoop/apps/allure/2.32.0/bin/allure.bat";
+//                ProcessBuilder builder = new ProcessBuilder(allureExecutable, "serve", "allure-results");
+//                builder.inheritIO(); // This will inherit the IO streams of the current process
+//                Process process = builder.start(); // Start the process to serve the report
+//                process.waitFor(); // Wait for the process to complete
+//
+//                // Allure serve command automatically opens the report in a browser
+//                System.out.println("Allure reports served successfully.");
+//            } catch (IOException | InterruptedException e) {
+//                e.printStackTrace();
+//                System.out.println("Failed to serve Allure report.");
+//            }
+//}
 }
 
