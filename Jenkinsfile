@@ -8,6 +8,11 @@ pipeline
 
     stages 
     {
+     stage('Clean') {
+            steps {
+                deleteDir()
+            }
+        }
         stage('Build') 
         {
             steps
