@@ -2,21 +2,18 @@ pipeline
 {
     agent any
     
-    
     tools{
-    	jdk 'jdk-11'
-        maven 'maven-3.9.9'
+        maven 'maven'
         }
 
     stages 
     {
-    
         stage('Build') 
         {
             steps
             {
                  git 'https://github.com/jglick/simple-maven-project-with-tests.git'
-                 bat "mvn -Dmaven.test.failure.ignore=true clean package"
+                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
             }
             post 
             {
@@ -30,19 +27,20 @@ pipeline
         
         
         
+        
+        
         stage("Deploy to QA"){
             steps{
                 echo("deploy to qa")
             }
         }
         
-        
                 
-        stage('Regression Automation Test') {
+        stage('Regression UI Automation Tests') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'https://github.com/naveenanimation20/Jan2023POMSeries.git'
-                    bat "mvn clean test -Dsurefire.suiteXmlFiles=src/main/resources/testrunners/testng_regression.xml"
+                    git 'https://github.com/Vinutha2829/OpenCartPOMSeries.git'
+                    bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_regression.xml"
                     
                 }
             }
@@ -85,8 +83,8 @@ pipeline
         stage('Sanity Automation Test') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'https://github.com/naveenanimation20/Jan2023POMSeries.git'
-                    bat "mvn clean test -Dsurefire.suiteXmlFiles=src/main/resources/testrunners/testng_sanity.xml"
+                    git 'https://github.com/Vinutha2829/OpenCartPOMSeries.git'
+                    bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_sanity.xml -Denv=stage"
                     
                 }
             }
@@ -103,6 +101,14 @@ pipeline
                                   reportFiles: 'TestExecutionReport.html', 
                                   reportName: 'HTML Sanity Extent Report', 
                                   reportTitles: ''])
+            }
+        }
+        
+                
+        
+        stage("Deploy to PROD"){
+            steps{
+                echo("deploy to PROD")
             }
         }
         
