@@ -14,27 +14,27 @@
 			class-name="com.qa.opencart.listeners.AnnotationTransformer" />
 	</listeners>
 			
-	<test name="Login Page Test">
+	<!-- <test name="Login Page Test">
 			
 	<parameter name="browser" value="firefox"/>
 			<classes>
 			<class name="com.qa.opencart.tests.LoginPageTest" />
 		</classes>
-	</test>
+	</test> -->
 	
 	<!--<test name="Account Page Test">
 	
 			<classes>
 			<class name="com.qa.opencart.tests.AccountsPageTest" />
 		</classes>
-	</test> 
+	</test> -->
 	
 	<test name="Search Page Test">
 	
 			<classes>
 			<class name="com.qa.opencart.tests.SearchTest" />
 		</classes>
-	</test>-->
+	</test>
 	
 	
 	<!--<test name="Register Page Test">
